@@ -1,0 +1,569 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "homework 9",
+    "contact": {},
+    "version": "1.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "variables": {}
+    }
+  ],
+  "paths": {
+    "/movies": {
+      "get": {
+        "tags": [
+          "movies"
+        ],
+        "summary": "get pagination",
+        "description": "get movies pagination",
+        "operationId": "getpagination",
+        "parameters": [
+          {
+            "name": "limit",
+            "in": "query",
+            "description": "",
+            "required": true,
+            "style": "form",
+            "explode": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32",
+              "example": 12
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "movies"
+        ],
+        "summary": "put movies",
+        "description": "changing the genre",
+        "operationId": "putmovies",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/putmoviesrequest"
+                  },
+                  {
+                    "example": {
+                      "id": 102,
+                      "title": "Elemental",
+                      "genres": "Cartoon",
+                      "year": "2023"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "id": 102,
+                "title": "Elemental",
+                "genres": "Cartoon",
+                "year": "2023"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/movies/102": {
+      "put": {
+        "tags": [
+          "movies"
+        ],
+        "summary": "put movies id 102",
+        "description": "changing the genres",
+        "operationId": "putmoviesid102",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/putmoviesid102request"
+                  },
+                  {
+                    "example": {
+                      "id": 102,
+                      "title": "Elemental",
+                      "genres": "Cartoon | Family",
+                      "year": "2023"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "id": 102,
+                "title": "Elemental",
+                "genres": "Cartoon | Family",
+                "year": "2023"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "delete": {
+        "tags": [
+          "movies"
+        ],
+        "summary": "delete movies/102",
+        "description": "deleteing mivies number 102",
+        "operationId": "deletemovies/102",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users": {
+      "get": {
+        "tags": [
+          "users"
+        ],
+        "summary": "get users",
+        "description": "all users",
+        "operationId": "getusers",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      },
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "post users",
+        "description": "adding new users",
+        "operationId": "postusers",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/postusersrequest"
+                  },
+                  {
+                    "example": {
+                      "id": 102,
+                      "email": "maria@craigslist.org",
+                      "gender": "Female",
+                      "password": "KcA223Mrg7DRM",
+                      "role": "Nun"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "id": 102,
+                "email": "maria@craigslist.org",
+                "gender": "Female",
+                "password": "KcA223Mrg7DRM",
+                "role": "Nun"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/101": {
+      "put": {
+        "tags": [
+          "users"
+        ],
+        "summary": "put users/101",
+        "description": "changing the gender",
+        "operationId": "putusers/101",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/putusers101request"
+                  },
+                  {
+                    "example": {
+                      "id": 101,
+                      "email": "timothee@craigslist.org",
+                      "gender": "Male",
+                      "password": "KcA36Mrg7kmM",
+                      "role": "Actor"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "id": 101,
+                "email": "timothee@craigslist.org",
+                "gender": "Male",
+                "password": "KcA36Mrg7kmM",
+                "role": "Actor"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/users/102": {
+      "delete": {
+        "tags": [
+          "users"
+        ],
+        "summary": "delete users/102",
+        "description": "deleteing user number 102",
+        "operationId": "deleteusers/102",
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    },
+    "/user/login": {
+      "post": {
+        "tags": [
+          "users"
+        ],
+        "summary": "user login",
+        "description": "getting token",
+        "operationId": "userlogin",
+        "parameters": [],
+        "requestBody": {
+          "description": "",
+          "content": {
+            "application/json": {
+              "schema": {
+                "allOf": [
+                  {
+                    "$ref": "#/components/schemas/userloginrequest"
+                  },
+                  {
+                    "example": {
+                      "email": "loak5@nifty.com",
+                      "password": "46sy8hp1eJ"
+                    }
+                  }
+                ]
+              },
+              "example": {
+                "email": "loak5@nifty.com",
+                "password": "46sy8hp1eJ"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "",
+            "headers": {}
+          }
+        },
+        "deprecated": false
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "putmoviesrequest": {
+        "title": "putmoviesrequest",
+        "required": [
+          "id",
+          "title",
+          "genres",
+          "year"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "genres": {
+            "type": "string"
+          },
+          "year": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": 102,
+          "title": "Elemental",
+          "genres": "Cartoon",
+          "year": "2023"
+        }
+      },
+      "putmoviesid102request": {
+        "title": "putmoviesid102request",
+        "required": [
+          "id",
+          "title",
+          "genres",
+          "year"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "title": {
+            "type": "string"
+          },
+          "genres": {
+            "type": "string"
+          },
+          "year": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": 102,
+          "title": "Elemental",
+          "genres": "Cartoon | Family",
+          "year": "2023"
+        }
+      },
+      "deletemovies102request": {
+        "title": "deletemovies102request",
+        "required": [
+          "id",
+          "email",
+          "gender",
+          "password",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": 101,
+          "email": "timothee@craigslist.org",
+          "gender": "Male",
+          "password": "KcA36Mrg7kmM",
+          "role": "Actor"
+        }
+      },
+      "postusersrequest": {
+        "title": "postusersrequest",
+        "required": [
+          "id",
+          "email",
+          "gender",
+          "password",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": 102,
+          "email": "maria@craigslist.org",
+          "gender": "Female",
+          "password": "KcA223Mrg7DRM",
+          "role": "Nun"
+        }
+      },
+      "putusers101request": {
+        "title": "putusers101request",
+        "required": [
+          "id",
+          "email",
+          "gender",
+          "password",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": 101,
+          "email": "timothee@craigslist.org",
+          "gender": "Male",
+          "password": "KcA36Mrg7kmM",
+          "role": "Actor"
+        }
+      },
+      "deleteusers102request": {
+        "title": "deleteusers102request",
+        "required": [
+          "id",
+          "email",
+          "gender",
+          "password",
+          "role"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "email": {
+            "type": "string"
+          },
+          "gender": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "id": 101,
+          "email": "timothee@craigslist.org",
+          "gender": "Male",
+          "password": "KcA36Mrg7kmM",
+          "role": "Actor"
+        }
+      },
+      "userloginrequest": {
+        "title": "userloginrequest",
+        "required": [
+          "email",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          }
+        },
+        "example": {
+          "email": "loak5@nifty.com",
+          "password": "46sy8hp1eJ"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "movies"
+    },
+    {
+      "name": "users"
+    }
+  ]
+}
